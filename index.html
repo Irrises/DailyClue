@@ -37,10 +37,40 @@
       filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
     }
     
-    /* Optional: Slight hover effect for the title */
-    .title-gradient:hover {
-      filter: drop-shadow(0px 4px 6px rgba(189, 52, 254, 0.3));
-      transition: filter 0.3s ease;
+    .table-container {
+      overflow-x: auto;
+    }
+    
+    .table th {
+      background-color: #f5f5f5;
+      color: #363636;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .table td:first-child {
+      text-align: left; /* Model names aligned left */
+    }
+
+    .best-score {
+      font-weight: bold;
+      color: #d32f2f; /* Red for best */
+    }
+
+    .second-best {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .section-header-row {
+      background-color: #e8e8e8 !important;
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 
@@ -61,7 +91,7 @@
             Seek-and-Solve: Benchmarking MLLMs for <br>
             Visual Clue-Driven Reasoning in Daily Scenarios
           </h1>
-          
+
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <strong>Anonymous Authors</strong><sup>1</sup>
@@ -80,25 +110,16 @@
                   <span>Paper</span>
                 </a>
               </span>
-
               <span class="link-block">
                 <a href="https://github.com/YOUR_USERNAME/DailyClue" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
               </span>
-
               <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="far fa-images"></i></span>
                   <span>Data</span>
-                </a>
-              </span>
-              
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-desktop"></i></span>
-                  <span>Demo</span>
                 </a>
               </span>
             </div>
@@ -124,16 +145,13 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Daily scenarios are characterized by visual richness, requiring Multimodal Large Language Models (MLLMs) to filter noise and identify decisive visual clues for accurate reasoning. Yet, current benchmarks predominantly aim at evaluating MLLMs' pre-existing knowledge or perceptual understanding, often neglecting the critical capability of reasoning. 
+            Daily scenarios are characterized by visual richness, requiring Multimodal Large Language Models (MLLMs) to filter noise and identify decisive visual clues for accurate reasoning. Yet, current benchmarks predominantly aim at evaluating MLLMs' pre-existing knowledge or perceptual understanding, often neglecting the critical capability of reasoning.
           </p>
           <p>
-            To bridge this gap, we introduce <strong>DailyClue</strong>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception. Instead of simple recognition, our questions compel MLLMs to actively explore suitable visual clues and leverage them for subsequent reasoning. 
-          </p>
-          <p>
-            To this end, we curate a comprehensive dataset spanning four major daily domains and 16 distinct subtasks. Comprehensive evaluation across MLLMs and agentic models underscores the formidable challenge posed by our benchmark. Our analysis reveals several critical insights, emphasizing that the accurate identification of visual clues is essential for robust reasoning.
+            To bridge this gap, we introduce <strong>DailyClue</strong>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception.
           </p>
         </div>
       </div>
@@ -163,9 +181,105 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Reasoning Examples</h2>
         <p class="subtitle is-6">
-          Below are representative examples from the 16 subtasks, illustrating the need for multi-step visual reasoning.
+            DailyClue features four daily life scenarios across 16 reasoning subtasks.
         </p>
         <img src="static/images/examples.jpg" alt="DailyClue Examples" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Performance Comparison</h2>
+        <div class="content has-text-justified">
+          <p>
+            Performance comparison on the DailyClue benchmark. Metrics denote accuracy (%). The best result is highlighted in <span class="best-score">bold red</span>, and the second best is <span class="second-best">underlined</span>.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth is-small">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Overall</th>
+                <th>Location Identification</th>
+                <th>Spatial Relationship</th>
+                <th>Daily Commonsense</th>
+                <th>Scientific Commonsense</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="section-header-row">
+                <td colspan="6">Open-source MLLMs</td>
+              </tr>
+              <tr><td>LLaVA-OneVision-7B</td><td>24.47</td><td>10.50</td><td>34.97</td><td>25.56</td><td>31.71</td></tr>
+              <tr><td>LLaVA-OneVision-72B</td><td>33.18</td><td>15.50</td><td>47.85</td><td>33.33</td><td>42.28</td></tr>
+              <tr><td>LLaVA-OneVision-1.5-8B-Instruct</td><td>29.43</td><td>10.50</td><td>47.85</td><td>27.78</td><td>38.21</td></tr>
+              <tr><td>InternVL3-8B</td><td>31.08</td><td>13.50</td><td>31.67</td><td>31.67</td><td>41.46</td></tr>
+              <tr><td>InternVL3-38B</td><td>36.94</td><td>17.00</td><td>47.85</td><td>47.22</td><td>39.84</td></tr>
+              <tr><td>InternVL3-78B</td><td>40.84</td><td>18.00</td><td class="best-score">54.60</td><td class="second-best">52.78</td><td>42.28</td></tr>
+              <tr><td>InternVL-3.5-38B</td><td>36.91</td><td>14.00</td><td class="second-best">49.69</td><td>43.33</td><td>43.90</td></tr>
+              <tr><td>Qwen2.5-VL-7B</td><td>30.63</td><td>15.00</td><td>39.88</td><td>37.22</td><td>34.15</td></tr>
+              <tr><td>Qwen2.5-VL-32B</td><td>35.59</td><td>21.50</td><td>42.94</td><td>42.78</td><td>38.21</td></tr>
+              <tr><td>Qwen2.5-VL-72B</td><td class="second-best">40.84</td><td class="best-score">24.50</td><td>47.85</td><td>48.33</td><td>47.15</td></tr>
+              <tr><td>Qwen3-VL-235B-A22B-Thinking</td><td class="best-score">44.59</td><td class="second-best">23.00</td><td>49.08</td><td class="best-score">56.67</td><td class="best-score">56.10</td></tr>
+              <tr><td>Qwen3-VL-235B-A22B-Instruct</td><td>40.69</td><td>22.50</td><td>46.63</td><td>50.00</td><td class="second-best">48.78</td></tr>
+
+              <tr class="section-header-row">
+                <td colspan="6">Close-source MLLMs</td>
+              </tr>
+              <tr><td>Gemini-2.5-Flash 🥉</td><td>50.00</td><td>32.50</td><td>55.83</td><td class="second-best">59.44</td><td>56.91</td></tr>
+              <tr><td>Gemini-2.5-Pro 🥇</td><td class="best-score">56.90</td><td class="best-score">41.50</td><td class="best-score">61.35</td><td class="best-score">62.77</td><td class="best-score">67.48</td></tr>
+              <tr><td>Claude-3.7-Sonnet</td><td>41.14</td><td>18.50</td><td>57.06</td><td>47.22</td><td>47.97</td></tr>
+              <tr><td>Claude-sonnet-4</td><td>41.74</td><td>22.00</td><td>52.15</td><td>48.89</td><td>49.59</td></tr>
+              <tr><td>Claude-sonnet-4.5</td><td>41.74</td><td>21.00</td><td>53.99</td><td>49.44</td><td>47.97</td></tr>
+              <tr><td>o4-mini</td><td>47.00</td><td>25.50</td><td class="second-best">58.28</td><td>58.33</td><td>50.41</td></tr>
+              <tr><td>GPT-5 🥈</td><td class="second-best">50.90</td><td class="second-best">38.00</td><td>57.67</td><td>51.67</td><td class="second-best">61.79</td></tr>
+
+              <tr class="section-header-row">
+                <td colspan="6">Agentic Models</td>
+              </tr>
+              <tr><td>DeepEyes-7B</td><td>30.93</td><td>18.50</td><td class="second-best">44.17</td><td>30.00</td><td>34.96</td></tr>
+              <tr><td>VLM-R3</td><td>33.18</td><td class="second-best">19.00</td><td>42.33</td><td class="second-best">36.11</td><td class="second-best">39.84</td></tr>
+              <tr><td>TreeVGR-7B</td><td>27.78</td><td>14.00</td><td>40.49</td><td>27.18</td><td>33.33</td></tr>
+              <tr><td>REVPT</td><td>25.83</td><td>6.50</td><td>38.04</td><td>32.22</td><td>31.71</td></tr>
+              <tr><td>Thyme</td><td class="best-score">46.25</td><td class="best-score">69.00</td><td>42.33</td><td>29.44</td><td>39.02</td></tr>
+              <tr><td>PyVision</td><td class="second-best">39.48</td><td>18.50</td><td class="best-score">47.23</td><td class="best-score">48.33</td><td class="best-score">50.40</td></tr>
+
+              <tr class="section-header-row">
+                <td colspan="6">Human Baseline</td>
+              </tr>
+              <tr><td>Human Baseline</td><td>45.50</td><td>19.33</td><td>70.67</td><td>40.00</td><td>52.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Further Findings</h2>
+        <div class="content">
+          <ul>
+            <li>
+              <strong>Accurate Visual Clues are Critical:</strong> Our analysis reveals that model performance is heavily bottlenecked by the failure to accurately capture critical visual semantics. Injecting Ground Truth (GT) clues yields substantial gains across all models.
+            </li>
+            <li>
+              <strong>Active Clue Seeking Improves Reasoning:</strong> Explicitly prompting models to actively seek visual clues within their Chain-of-Thought (CoT) acts as a critical anchor, consistently improving accuracy.
+            </li>
+            <li>
+              <strong>"Right Answer, Wrong Reason":</strong> Models sometimes arrive at correct answers through illusionary or irrelevant clues, though top-tier models like Gemini-2.5-Pro show exceptional stability.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -198,7 +312,6 @@
         <div class="content">
           <p>
             This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://evolvinglmms-lab.github.io/LongVT/">LongVT</a>.
           </p>
         </div>
       </div>
