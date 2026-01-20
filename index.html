@@ -12,9 +12,9 @@
   <meta property="og:site_name" content="ACL 2025 Submission">
   <meta property="og:title" content="Seek-and-Solve: DailyClue Benchmark">
   <meta property="og:description" content="Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios.">
-  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:image" content="static/images/teaser.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:image" content="static/images/teaser.jpg">
 
   <title>Seek-and-Solve: DailyClue Benchmark</title>
   
@@ -41,6 +41,12 @@
       overflow-x: auto;
     }
     
+    /* Table Styling to match LaTeX compact look */
+    .table.is-small th, .table.is-small td {
+      padding: 0.5em 0.4em;
+      font-size: 0.85rem;
+    }
+
     .table th {
       background-color: #f5f5f5;
       color: #363636;
@@ -55,27 +61,32 @@
 
     .table td:first-child {
       text-align: left; 
+      font-weight: 500;
     }
     
+    /* LaTeX \textbf{} -> Red Bold */
     .best-score {
       font-weight: bold;
       color: #d32f2f;
     }
     
+    /* LaTeX \underline{} -> Underline Bold */
     .second-best {
       text-decoration: underline;
       font-weight: bold;
+      color: #000;
     }
 
     .section-header-row {
       background-color: #e8e8e8 !important;
       font-weight: bold;
       text-align: center;
+      color: #333;
     }
 
-    /* Styles for the new Further Findings tables */
-    .diff-pos { color: #2e7d32; font-size: 0.9em; font-weight: bold; } /* Green for positive */
-    .diff-neg { color: #c62828; font-size: 0.9em; font-weight: bold; } /* Red for negative */
+    /* Further Findings styles */
+    .diff-pos { color: #2e7d32; font-size: 0.9em; font-weight: bold; } 
+    .diff-neg { color: #c62828; font-size: 0.9em; font-weight: bold; } 
     .caption { font-size: 0.9em; color: #666; margin-top: 5px; text-align: center;}
   </style>
 
@@ -138,7 +149,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser.png" alt="DailyClue Overview" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+      <img src="static/images/teaser.jpg" alt="DailyClue Overview" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
       <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
         <span class="dnerf">DailyClue</span> is a benchmark designed for visual clue-driven reasoning in daily scenarios, covering four major domains: Location, Spatial, Daily Commonsense, and Scientific Commonsense.
       </h2>
@@ -173,7 +184,7 @@
           <p>
             We employ a carefully controlled generation and filtering pipeline to ensure high-quality, reasoning-intensive questions. The process involves candidate triplet generation by top-tier MLLMs, followed by multi-model verification and rigorous human cross-checks.
           </p>
-          <img src="static/images/pipeline.png" alt="Construction Pipeline" style="width: 100%; margin-top: 20px; border: 1px solid #e1e1e1; border-radius: 8px;">
+          <img src="static/images/pipeline.jpg" alt="Construction Pipeline" style="width: 100%; margin-top: 20px; border: 1px solid #e1e1e1; border-radius: 8px;">
         </div>
       </div>
     </div>
@@ -188,7 +199,7 @@
         <p class="subtitle is-6">
             DailyClue features four daily life scenarios across 16 reasoning subtasks.
         </p>
-        <img src="static/images/examples.png" alt="DailyClue Examples" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <img src="static/images/examples.jpg" alt="DailyClue Examples" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
       </div>
     </div>
   </div>
@@ -211,27 +222,41 @@
               <tr>
                 <th>Model</th>
                 <th>Overall</th>
-                <th>Location Identification</th>
-                <th>Spatial Relationship</th>
-                <th>Daily Commonsense</th>
-                <th>Scientific Commonsense</th>
+                <th>Location<br>Identification</th>
+                <th>Spatial<br>Relationship</th>
+                <th>Daily<br>Commonsense</th>
+                <th>Scientific<br>Commonsense</th>
               </tr>
             </thead>
             <tbody>
               <tr class="section-header-row"><td colspan="6">Open-source MLLMs</td></tr>
               <tr><td>LLaVA-OneVision-7B</td><td>24.47</td><td>10.50</td><td>34.97</td><td>25.56</td><td>31.71</td></tr>
               <tr><td>LLaVA-OneVision-72B</td><td>33.18</td><td>15.50</td><td>47.85</td><td>33.33</td><td>42.28</td></tr>
+              <tr><td>LLaVA-OneVision-1.5-8B-Instruct</td><td>29.43</td><td>10.50</td><td>47.85</td><td>27.78</td><td>38.21</td></tr>
+              <tr><td>InternVL3-8B</td><td>31.08</td><td>13.50</td><td>31.67</td><td>31.67</td><td>41.46</td></tr>
+              <tr><td>InternVL3-38B</td><td>36.94</td><td>17.00</td><td>47.85</td><td>47.22</td><td>39.84</td></tr>
               <tr><td>InternVL3-78B</td><td>40.84</td><td>18.00</td><td class="best-score">54.60</td><td class="second-best">52.78</td><td>42.28</td></tr>
+              <tr><td>InternVL-3.5-38B</td><td>36.91</td><td>14.00</td><td class="second-best">49.69</td><td>43.33</td><td>43.90</td></tr>
+              <tr><td>Qwen2.5-VL-7B</td><td>30.63</td><td>15.00</td><td>39.88</td><td>37.22</td><td>34.15</td></tr>
+              <tr><td>Qwen2.5-VL-32B</td><td>35.59</td><td>21.50</td><td>42.94</td><td>42.78</td><td>38.21</td></tr>
               <tr><td>Qwen2.5-VL-72B</td><td class="second-best">40.84</td><td class="best-score">24.50</td><td>47.85</td><td>48.33</td><td>47.15</td></tr>
-              <tr><td>Qwen3-VL-235B-Thinking</td><td class="best-score">44.59</td><td class="second-best">23.00</td><td>49.08</td><td class="best-score">56.67</td><td class="best-score">56.10</td></tr>
+              <tr><td>Qwen3-VL-235B-A22B-Thinking</td><td class="best-score">44.59</td><td class="second-best">23.00</td><td>49.08</td><td class="best-score">56.67</td><td class="best-score">56.10</td></tr>
+              <tr><td>Qwen3-VL-235B-A22B-Instruct</td><td>40.69</td><td>22.50</td><td>46.63</td><td>50.00</td><td class="second-best">48.78</td></tr>
 
               <tr class="section-header-row"><td colspan="6">Close-source MLLMs</td></tr>
-              <tr><td>Gemini-2.5-Flash 🥉</td><td>50.00</td><td>32.50</td><td>55.83</td><td class="second-best">59.44</td><td>56.91</td></tr>
-              <tr><td>Gemini-2.5-Pro 🥇</td><td class="best-score">56.90</td><td class="best-score">41.50</td><td class="best-score">61.35</td><td class="best-score">62.77</td><td class="best-score">67.48</td></tr>
+              <tr><td>🥉 Gemini-2.5-Flash</td><td>50.00</td><td>32.50</td><td>55.83</td><td class="second-best">59.44</td><td>56.91</td></tr>
+              <tr><td>🥇 Gemini-2.5-Pro</td><td class="best-score">56.90</td><td class="best-score">41.50</td><td class="best-score">61.35</td><td class="best-score">62.77</td><td class="best-score">67.48</td></tr>
               <tr><td>Claude-3.7-Sonnet</td><td>41.14</td><td>18.50</td><td>57.06</td><td>47.22</td><td>47.97</td></tr>
-              <tr><td>GPT-5 🥈</td><td class="second-best">50.90</td><td class="second-best">38.00</td><td>57.67</td><td>51.67</td><td class="second-best">61.79</td></tr>
+              <tr><td>Claude-sonnet-4</td><td>41.74</td><td>22.00</td><td>52.15</td><td>48.89</td><td>49.59</td></tr>
+              <tr><td>Claude-sonnet-4.5</td><td>41.74</td><td>21.00</td><td>53.99</td><td>49.44</td><td>47.97</td></tr>
+              <tr><td>o4-mini</td><td>47.00</td><td>25.50</td><td class="second-best">58.28</td><td>58.33</td><td>50.41</td></tr>
+              <tr><td>🥈 GPT-5</td><td class="second-best">50.90</td><td class="second-best">38.00</td><td>57.67</td><td>51.67</td><td class="second-best">61.79</td></tr>
 
               <tr class="section-header-row"><td colspan="6">Agentic Models</td></tr>
+              <tr><td>DeepEyes-7B</td><td>30.93</td><td>18.50</td><td class="second-best">44.17</td><td>30.00</td><td>34.96</td></tr>
+              <tr><td>VLM-R3</td><td>33.18</td><td class="second-best">19.00</td><td>42.33</td><td class="second-best">36.11</td><td class="second-best">39.84</td></tr>
+              <tr><td>TreeVGR-7B</td><td>27.78</td><td>14.00</td><td>40.49</td><td>27.18</td><td>33.33</td></tr>
+              <tr><td>REVPT</td><td>25.83</td><td>6.50</td><td>38.04</td><td>32.22</td><td>31.71</td></tr>
               <tr><td>Thyme</td><td class="best-score">46.25</td><td class="best-score">69.00</td><td>42.33</td><td>29.44</td><td>39.02</td></tr>
               <tr><td>PyVision</td><td class="second-best">39.48</td><td>18.50</td><td class="best-score">47.23</td><td class="best-score">48.33</td><td class="best-score">50.40</td></tr>
 
@@ -328,7 +353,7 @@
               </div>
             </div>
             <div class="column is-6 has-text-centered">
-              <img src="static/images/figure6.png" alt="Impact of Visual Clue Reasoning" style="width: 100%; max-width: 450px; border-radius: 5px;">
+              <img src="static/images/figure6.jpg" alt="Impact of Visual Clue Reasoning" style="width: 100%; max-width: 450px; border-radius: 5px;">
               <p class="caption">Figure 6: Impact of visual-clue-reasoning on accuracy.</p>
             </div>
           </div>
@@ -342,7 +367,7 @@
           <h4 class="title is-4">3. Rigorous Evaluation: "Right Answer, Wrong Reason"</h4>
           <div class="columns is-vcentered">
             <div class="column is-6 has-text-centered">
-              <img src="static/images/figure7.png" alt="Rigorous Evaluation Protocol" style="width: 100%; max-width: 450px; border-radius: 5px;">
+              <img src="static/images/figure7.jpg" alt="Rigorous Evaluation Protocol" style="width: 100%; max-width: 450px; border-radius: 5px;">
               <p class="caption">Figure 7: Accuracy comparison between General and Rigorous Evaluation Protocols.</p>
             </div>
             <div class="column is-6">
