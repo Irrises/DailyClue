@@ -8,91 +8,83 @@
   <meta name="description" content="We introduce DailyClue, a benchmark designed for visual clue-driven reasoning in daily scenarios, spanning four major daily domains and 16 distinct subtasks.">
   <meta name="keywords" content="DailyClue, MLLM, Visual Reasoning, Benchmark, Multimodal, ACL">
   <meta name="author" content="Anonymous Authors">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
   
-  <meta property="og:type" content="article">
   <meta property="og:site_name" content="ACL 2025 Submission">
-  <meta property="og:title" content="Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios">
-  <meta property="og:description" content="Introducing DailyClue: A benchmark for visual clue-driven reasoning in authentic daily activities.">
-  <meta property="og:url" content="https://YOUR_DOMAIN.github.io/DailyClue">
-  <meta property="og:image" content="static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  
+  <meta property="og:title" content="Seek-and-Solve: DailyClue Benchmark">
+  <meta property="og:description" content="Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios.">
+  <meta property="og:image" content="static/images/teaser.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Seek-and-Solve: DailyClue Benchmark">
-  <meta name="twitter:description" content="Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios.">
-  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image" content="static/images/teaser.jpg">
 
-  <meta name="citation_title" content="Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="Association for Computational Linguistics (ACL)">
-  
-  <title>DailyClue: Visual Clue-Driven Reasoning Benchmark</title>
+  <title>Seek-and-Solve: DailyClue Benchmark</title>
   
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/index.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            Seek-and-Solve: Benchmarking MLLMs for <br>
+            Visual Clue-Driven Reasoning in Daily Scenarios
+          </h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <strong>Anonymous Authors</strong><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ACL 2025 Submission</span>
+          </div>
+
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios</h1>
-            
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="#" target="_blank">Anonymous Authors</a>
-              </span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">ACL 2025 Submission</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2025.XXXXX" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2025.XXXXX" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
 
               <span class="link-block">
-                <a href="https://github.com/YOUR_USERNAME/DailyClue" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Code & Data</span>
-              </a>
-            </span>
-
-            <span class="link-block">
-              <a href="#" target="_blank"
-              class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="far fa-images"></i>
+                <a href="https://github.com/YOUR_USERNAME/DailyClue" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
               </span>
-              <span>Dataset</span>
-            </a>
-          </span>
+
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="far fa-images"></i></span>
+                  <span>Data</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-desktop"></i></span>
+                  <span>Demo</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -104,9 +96,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser.jpg" alt="DailyClue Benchmark Overview" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
-        <b>DailyClue</b> is a benchmark designed for visual clue-driven reasoning in daily scenarios. It covers four major domains: Location Identification, Spatial Reasoning, Daily Commonsense, and Scientific Commonsense.
+      <img src="static/images/teaser.jpg" alt="DailyClue Overview" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+        <span class="dnerf">DailyClue</span> is a benchmark designed for visual clue-driven reasoning in daily scenarios, covering four major domains: Location, Spatial, Daily Commonsense, and Scientific Commonsense.
       </h2>
     </div>
   </div>
@@ -122,7 +114,7 @@
             Daily scenarios are characterized by visual richness, requiring Multimodal Large Language Models (MLLMs) to filter noise and identify decisive visual clues for accurate reasoning. Yet, current benchmarks predominantly aim at evaluating MLLMs' pre-existing knowledge or perceptual understanding, often neglecting the critical capability of reasoning. 
           </p>
           <p>
-            To bridge this gap, we introduce <b>DailyClue</b>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception. Instead of simple recognition, our questions compel MLLMs to actively explore suitable visual clues and leverage them for subsequent reasoning. 
+            To bridge this gap, we introduce <strong>DailyClue</strong>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception. Instead of simple recognition, our questions compel MLLMs to actively explore suitable visual clues and leverage them for subsequent reasoning. 
           </p>
           <p>
             To this end, we curate a comprehensive dataset spanning four major daily domains and 16 distinct subtasks. Comprehensive evaluation across MLLMs and agentic models underscores the formidable challenge posed by our benchmark. Our analysis reveals several critical insights, emphasizing that the accurate identification of visual clues is essential for robust reasoning.
@@ -140,49 +132,75 @@
         <h2 class="title is-3">Data Construction Pipeline</h2>
         <div class="content has-text-justified">
           <p>
-            We employ a carefully controlled generation and filtering pipeline. First, top-tier MLLMs generate candidate question-clue-answer triplets. Then, these candidates are verified by multiple peer models and undergo rigorous human verification.
+            We employ a carefully controlled generation and filtering pipeline to ensure high-quality, reasoning-intensive questions. The process involves candidate triplet generation by top-tier MLLMs, followed by multi-model verification and rigorous human cross-checks.
           </p>
-          <img src="static/images/pipeline.jpg" alt="DailyClue Construction Pipeline" style="width: 100%; margin-top: 20px;">
+          <img src="static/images/pipeline.jpg" alt="Construction Pipeline" style="width: 100%; margin-top: 20px; border: 1px solid #e1e1e1; border-radius: 8px;">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Reasoning Examples</h2>
-      <div class="content has-text-centered">
-          <img src="static/images/examples.jpg" alt="DailyClue Examples" style="width: 100%;">
-          <p class="subtitle is-6">
-            Representative examples from the 16 subtasks, covering Location Identification, Daily Commonsense, Spatial Reasoning, and Scientific Commonsense.
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Reasoning Examples</h2>
+        <p class="subtitle is-6">
+          Below are representative examples from the 16 subtasks, illustrating the need for multi-step visual reasoning.
+        </p>
+        <img src="static/images/examples.jpg" alt="DailyClue Examples" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Benchmark Statistics</h2>
+        <div class="content has-text-justified">
+          <p>
+            The DailyClue benchmark comprises <strong>666 curated triplets</strong> spanning four broad categories: Location Identification, Spatial Reasoning, Daily Commonsense, and Scientific Commonsense.
           </p>
+          </div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-      </div>
-      <pre><code>@article{dailyclue2025,
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{dailyclue2025,
   title={Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios},
   author={Anonymous Authors},
   journal={ACL Submission},
   year={2025}
 }</code></pre>
-    </div>
+  </div>
 </section>
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <p>
-        This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-      </p>
+      <a class="icon-link" href="https://arxiv.org/abs/2025.XXXXX" class="external-link" disabled>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/YOUR_USERNAME/DailyClue" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://evolvinglmms-lab.github.io/LongVT/">LongVT</a>.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
