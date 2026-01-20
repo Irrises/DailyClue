@@ -29,10 +29,22 @@
   <link rel="stylesheet" href="static/css/index.css">
 
   <style>
-    .title-gradient {
-      background: linear-gradient(120deg, #bd34fe 30%, #41d1ff 90%);
+    /* 动态渐变标题动画定义 */
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* LongVT 风格的 Cyber 标题样式 */
+    .cyber-title {
+      background-image: linear-gradient(90deg, #ff00cc 0%, #3333ff 50%, #00ccff 100%);
+      background-size: 400% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      animation: gradient-move 5s ease infinite;
       font-weight: 800;
       filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
     }
@@ -41,7 +53,6 @@
       overflow-x: auto;
     }
     
-    /* Table Styling to match LaTeX compact look */
     .table.is-small th, .table.is-small td {
       padding: 0.5em 0.4em;
       font-size: 0.85rem;
@@ -64,13 +75,11 @@
       font-weight: 500;
     }
     
-    /* LaTeX \textbf{} -> Red Bold */
     .best-score {
       font-weight: bold;
       color: #d32f2f;
     }
     
-    /* LaTeX \underline{} -> Underline Bold */
     .second-best {
       text-decoration: underline;
       font-weight: bold;
@@ -84,7 +93,6 @@
       color: #333;
     }
 
-    /* Further Findings styles */
     .diff-pos { color: #2e7d32; font-size: 0.9em; font-weight: bold; } 
     .diff-neg { color: #c62828; font-size: 0.9em; font-weight: bold; } 
     .caption { font-size: 0.9em; color: #666; margin-top: 5px; text-align: center;}
@@ -103,7 +111,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title title-gradient">
+          <h1 class="title is-1 publication-title cyber-title">
             Seek-and-Solve: Benchmarking MLLMs for <br>
             Visual Clue-Driven Reasoning in Daily Scenarios
           </h1>
@@ -161,13 +169,16 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Daily scenarios are characterized by visual richness, requiring Multimodal Large Language Models (MLLMs) to filter noise and identify decisive visual clues for accurate reasoning. Yet, current benchmarks predominantly aim at evaluating MLLMs' pre-existing knowledge or perceptual understanding, often neglecting the critical capability of reasoning. 
+            Daily scenarios are characterized by visual richness, requiring Multimodal Large Language Models (MLLMs) to filter noise and identify decisive visual clues for accurate reasoning. Yet, current benchmarks predominantly aim at evaluating MLLMs' pre-existing knowledge or perceptual understanding, often neglecting the critical capability of reasoning.
           </p>
           <p>
-            To bridge this gap, we introduce <strong>DailyClue</strong>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception.
+            To bridge this gap, we introduce <strong>DailyClue</strong>, a benchmark designed for visual clue-driven reasoning in daily scenarios. Our construction is guided by two core principles: (1) strict grounding in authentic daily activities, and (2) challenging query design that necessitates more than surface-level perception. Instead of simple recognition, our questions compel MLLMs to actively explore suitable visual clues and leverage them for subsequent reasoning. To this end, we curate a comprehensive dataset spanning four major daily domains and 16 distinct subtasks.
+          </p>
+          <p>
+            Comprehensive evaluation across MLLMs and agentic models underscores the formidable challenge posed by our benchmark. Our analysis reveals several critical insights, emphasizing that the accurate identification of visual clues is essential for robust reasoning.
           </p>
         </div>
       </div>
@@ -290,7 +301,6 @@
               We investigated how performance changes when models are conditioned on visual clues from different sources. 
               <strong>Table 3</strong> shows that performance strictly follows clue quality (Qwen < Claude < Gemini < GT).
               Notably, injecting <strong>Ground Truth (GT) clues</strong> yields substantial gains across all models (e.g., Claude +14.86%), indicating that performance is heavily bottlenecked by inaccurate clue extraction.
-              Conversely, misleading clues can induce hallucinations (sycophancy).
             </p>
           </div>
           <div class="table-container">
