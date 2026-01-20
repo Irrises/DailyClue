@@ -9,7 +9,7 @@
   <meta name="keywords" content="DailyClue, MLLM, Visual Reasoning, Benchmark, Multimodal, ACL">
   <meta name="author" content="Anonymous Authors">
   
-  <meta property="og:site_name" content="ACL 2025 Submission">
+  <meta property="og:site_name" content="ACL 2026 Submission">
   <meta property="og:title" content="Seek-and-Solve: DailyClue Benchmark">
   <meta property="og:description" content="Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios.">
   <meta property="og:image" content="static/images/teaser.png">
@@ -29,14 +29,14 @@
   <link rel="stylesheet" href="static/css/index.css">
 
   <style>
-    /* 动态渐变标题动画定义 */
+    /* 动态渐变标题动画 */
     @keyframes gradient-move {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* LongVT 风格的 Cyber 标题样式 */
+    /* Cyber 标题样式 - 智能字号控制 */
     .cyber-title {
       background-image: linear-gradient(90deg, #ff00cc 0%, #3333ff 50%, #00ccff 100%);
       background-size: 400% auto;
@@ -47,12 +47,17 @@
       animation: gradient-move 5s ease infinite;
       font-weight: 800;
       filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+      
+      /* 核心修改：使用 clamp 限制最大字号，确保能放下两行 */
+      font-size: clamp(1.8rem, 4vw, 2.8rem) !important; 
+      line-height: 1.2;
     }
     
     .table-container {
       overflow-x: auto;
     }
     
+    /* 表格紧凑样式 */
     .table.is-small th, .table.is-small td {
       padding: 0.5em 0.4em;
       font-size: 0.85rem;
@@ -123,13 +128,13 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>ACL 2025 Submission</span>
+            <span class="author-block"><sup>1</sup>ACL 2026 Submission</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2025.XXXXX" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2026.XXXXX" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
@@ -400,11 +405,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{dailyclue2025,
+    <pre><code>@article{dailyclue2026,
   title={Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios},
   author={Anonymous Authors},
   journal={ACL Submission},
-  year={2025}
+  year={2026}
 }</code></pre>
   </div>
 </section>
