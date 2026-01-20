@@ -28,6 +28,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <style>
+    .title-gradient {
+      background: linear-gradient(120deg, #bd34fe 30%, #41d1ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+    }
+    
+    /* Optional: Slight hover effect for the title */
+    .title-gradient:hover {
+      filter: drop-shadow(0px 4px 6px rgba(189, 52, 254, 0.3));
+      transition: filter 0.3s ease;
+    }
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
@@ -41,7 +57,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
+          <h1 class="title is-1 publication-title title-gradient">
             Seek-and-Solve: Benchmarking MLLMs for <br>
             Visual Clue-Driven Reasoning in Daily Scenarios
           </h1>
@@ -150,21 +166,6 @@
           Below are representative examples from the 16 subtasks, illustrating the need for multi-step visual reasoning.
         </p>
         <img src="static/images/examples.jpg" alt="DailyClue Examples" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Benchmark Statistics</h2>
-        <div class="content has-text-justified">
-          <p>
-            The DailyClue benchmark comprises <strong>666 curated triplets</strong> spanning four broad categories: Location Identification, Spatial Reasoning, Daily Commonsense, and Scientific Commonsense.
-          </p>
-          </div>
       </div>
     </div>
   </div>
